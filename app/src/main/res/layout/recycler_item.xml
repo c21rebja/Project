@@ -28,10 +28,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/item_button"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

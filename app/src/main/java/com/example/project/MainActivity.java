@@ -5,7 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
@@ -25,11 +31,26 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         adapter = new MyAdapter(berryList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        berryList = new ArrayList<Berries>();
+
+        new JsonTask(this).execute(JSON_URL);
     }
 
     @Override
     public void onPostExecute(String json) {
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<Berries>>() {}.getType();
+        List<Berries> tempList = gson.fromJson(json, type);
 
+        if(tempList != null) {
+            // do that thing that i did wrong?
+            berryList.addAll(tempList);
+            adapter.notifyDataSetChanged();
+        }
+        else {
+            Log.d("===", "There were no elements to show");
+        }
 
     }
 }
