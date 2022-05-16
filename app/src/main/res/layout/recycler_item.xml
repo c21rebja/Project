@@ -13,13 +13,13 @@
         android:layout_height="wrap_content"
         tools:text="name of the berry"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/item_name_type"
+        app:layout_constraintBottom_toTopOf="@id/item_type_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/item_name_type"
+        android:id="@+id/item_type_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="type of plant"
