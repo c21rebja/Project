@@ -11,7 +11,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
@@ -19,7 +18,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     RecyclerView recyclerView;
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=c21rebja";
-    public List<Berries> berryList;
     private MyAdapter adapter;
 
     @Override
@@ -28,11 +26,9 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recycler_view);
-        adapter = new MyAdapter(berryList);
+        adapter = new MyAdapter();
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        berryList = new ArrayList<Berries>();
 
         new JsonTask(this).execute(JSON_URL);
     }
@@ -42,10 +38,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Gson gson = new Gson();
         Type type = new TypeToken<List<Berries>>() {}.getType();
         List<Berries> tempList = gson.fromJson(json, type);
-
         if(tempList != null) {
-            // do that thing that i did wrong?
-            berryList.addAll(tempList);
+            adapter.setBerryList(tempList);
             adapter.notifyDataSetChanged();
         }
         else {

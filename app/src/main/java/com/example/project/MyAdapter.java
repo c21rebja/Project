@@ -7,12 +7,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
-    private List<Berries> berryList;
-    public MyAdapter(List<Berries> berryList) {
+    private List<Berries> berryList = new ArrayList<>();
+
+    public void setBerryList(List<Berries> berryList) {
         this.berryList = berryList;
     }
 
