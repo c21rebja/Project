@@ -1,48 +1,42 @@
 package com.example.project;
 
 public class Berries {
-    private String name;
-    private String grows;
-    private String worksAs;
-    private String type;
-    private String img;
+    private String name; //Hallon
+    private String company; //Paj
+    private String location; //buske
+    private String category; //små-frukt
+    private String auxdata; //raspberry.png
 
     public Berries(String name, String grows, String worksAs, String type, String img) {
         this.name = name;
-        this.grows = grows;
-        this.worksAs = worksAs;
-        this.type = type;
-        this.img = img;
+        this.company = company;
+        this.location = location;
+        this.category = category;
+        this.auxdata = auxdata;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getGrows() {
-        return grows;
+    public String getCompany() {
+        return company;
     }
 
-    public String getWorksAs() {
-        return worksAs;
+    public String getLocation() {
+        return location;
     }
 
-    public String getType() {
-        return type;
+    public String getCategory() {
+        return category;
     }
 
-    public String getImg() {
-        return img;
+    public String getAuxdata() {
+        return auxdata;
     }
 
     @Override
     public String toString() {
-        return "Berries{" +
-                "name='" + name + '\'' +
-                ", grows='" + grows + '\'' +
-                ", worksAs='" + worksAs + '\'' +
-                ", type='" + type + '\'' +
-                ", img='" + img + '\'' +
-                '}';
+        return name + " är av typen " + category + " och fungerar bra som " + company + ". Den växer på " + location + ".";
     }
 }
