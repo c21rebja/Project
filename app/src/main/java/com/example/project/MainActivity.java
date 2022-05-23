@@ -82,6 +82,5 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Log.d("===", cakeView.getText().toString());
         Log.d("===", growView.getText().toString());
         Log.d("===", imgView.getText().toString());
-
     }
 }
