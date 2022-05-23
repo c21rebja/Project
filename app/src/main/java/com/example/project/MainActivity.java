@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -63,11 +64,13 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     public void displayDetails (View view) {
         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
 
-        TextView nameView = findViewById(R.id.item_name_text);
-        TextView typeView = findViewById(R.id.item_type_text);
-        TextView cakeView = findViewById(R.id.item_cake_text);
-        TextView growView = findViewById(R.id.item_grow_text);
-        TextView imgView = findViewById(R.id.item_img_text);
+        ViewGroup v = (ViewGroup) view.getParent();
+
+        TextView nameView = v.findViewById(R.id.item_name_text);
+        TextView typeView = v.findViewById(R.id.item_type_text);
+        TextView cakeView = v.findViewById(R.id.item_cake_text);
+        TextView growView = v.findViewById(R.id.item_grow_text);
+        TextView imgView = v.findViewById(R.id.item_img_text);
 
         intent.putExtra("name", nameView.getText().toString());
         intent.putExtra("type", typeView.getText().toString());
