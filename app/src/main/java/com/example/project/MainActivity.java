@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -60,6 +61,27 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     }
 
     public void displayDetails (View view) {
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+
+        TextView nameView = findViewById(R.id.item_name_text);
+        TextView typeView = findViewById(R.id.item_type_text);
+        TextView cakeView = findViewById(R.id.item_cake_text);
+        TextView growView = findViewById(R.id.item_grow_text);
+        TextView imgView = findViewById(R.id.item_img_text);
+
+        intent.putExtra("name", nameView.getText().toString());
+        intent.putExtra("type", typeView.getText().toString());
+        intent.putExtra("cake", cakeView.getText().toString());
+        intent.putExtra("grow", growView.getText().toString());
+        intent.putExtra("img", imgView.getText().toString());
+
+        startActivity(intent);
+
+        Log.d("===", nameView.getText().toString());
+        Log.d("===", typeView.getText().toString());
+        Log.d("===", cakeView.getText().toString());
+        Log.d("===", growView.getText().toString());
+        Log.d("===", imgView.getText().toString());
 
     }
 }
