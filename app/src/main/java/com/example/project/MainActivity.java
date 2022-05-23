@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         allBerries = gson.fromJson(json, type);
 
         if(allBerries != null) {
-            adapter.setBerryList(allBerries, );
+            adapter.setBerryList(this, allBerries, onClickListener);
             adapter.notifyDataSetChanged();
         }
         else {

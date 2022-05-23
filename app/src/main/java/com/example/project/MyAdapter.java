@@ -14,17 +14,15 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     private LayoutInflater layoutInflater;
-    private View.OnClickListener onClickListener;
+    private OnClickListener onClickListener;
     private List<Berries> berryList = new ArrayList<>();
 
-    public void setBerryList(Context context, List<Berries> berryList, View.OnClickListener onClickListener) {
+    public void setBerryList(Context context, List<Berries> berryList, OnClickListener onClickListener) {
         this.berryList = berryList;
         this.layoutInflater = LayoutInflater.from(context);
-        this.berryList = berryList;
         this.onClickListener = onClickListener;
 
-
-        List<Berries> newList = new ArrayList<>();
+        //List<Berries> newList = new ArrayList<>();
         //for (Berries berries : tempList) {
 
         //}
