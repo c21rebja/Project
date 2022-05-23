@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         recyclerView = findViewById(R.id.recycler_view);
 
         //adapter = new MyAdapter();
-        MyAdapter adapter = new MyAdapter(this, items, new MyAdapter().OnClickListener() {
+        MyAdapter adapter = new MyAdapter(this, allBerries, new MyAdapter.OnClickListener() {
             @Override
             public void onClick(Berries item) {
                 //intent here!!!
