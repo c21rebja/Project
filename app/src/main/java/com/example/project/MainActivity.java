@@ -16,11 +16,13 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
     RecyclerView recyclerView;
+    List<Berries> allBerries;
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=c21rebja";
     private MyAdapter adapter;
@@ -31,7 +33,15 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recycler_view);
-        adapter = new MyAdapter();
+
+        //adapter = new MyAdapter();
+        MyAdapter adapter = new MyAdapter(this, items, new MyAdapter().OnClickListener() {
+            @Override
+            public void onClick(Berries item) {
+                //intent here!!!
+            }
+        });
+
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -51,15 +61,20 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     public void onPostExecute(String json) {
         Gson gson = new Gson();
         Type type = new TypeToken<List<Berries>>() {}.getType();
-        List<Berries> tempList = gson.fromJson(json, type);
-        if(tempList != null) {
-            adapter.setBerryList(tempList);
+        allBerries = gson.fromJson(json, type);
+
+        if(allBerries != null) {
+            adapter.setBerryList(allBerries, );
             adapter.notifyDataSetChanged();
         }
         else {
             Log.d("===", "There were no elements to show");
         }
     }
+
+    /*
+
+     */
 
     public void displayDetails (View view) {
         Intent intent = new Intent(MainActivity.this, DetailActivity.class);

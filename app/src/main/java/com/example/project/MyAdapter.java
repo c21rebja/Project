@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,21 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
+    private LayoutInflater layoutInflater;
+    private View.OnClickListener onClickListener;
     private List<Berries> berryList = new ArrayList<>();
 
-    public void setBerryList(List<Berries> berryList) {
+    public void setBerryList(Context context, List<Berries> berryList, View.OnClickListener onClickListener) {
         this.berryList = berryList;
+        this.layoutInflater = LayoutInflater.from(context);
+        this.berryList = berryList;
+        this.onClickListener = onClickListener;
+
+
+        List<Berries> newList = new ArrayList<>();
+        //for (Berries berries : tempList) {
+
+        //}
     }
 
     @Override
@@ -36,5 +48,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public int getItemCount() {
         return berryList.size();
+    }
+
+
+
+    public interface OnClickListener {
+        void onClick(Berries berry);
     }
 }

@@ -6,7 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyViewHolder extends RecyclerView.ViewHolder {
+public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     TextView name;
     TextView company;
     TextView location;
@@ -15,10 +15,18 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
+        itemView.setOnClickListener(this);
+
         name = itemView.findViewById(R.id.item_name_text);
         company = itemView.findViewById(R.id.item_cake_text);
         location = itemView.findViewById(R.id.item_grow_text);
         category = itemView.findViewById(R.id.item_type_text);
         auxdata = itemView.findViewById(R.id.item_img_text);
     }
+
+    @Override
+    public void onClick(View view) {
+        onClickListener.onClick(berryList.get(getAdapterPosition()));
+    }
 }
+
