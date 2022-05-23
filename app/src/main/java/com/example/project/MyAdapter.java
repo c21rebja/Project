@@ -27,7 +27,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(berryList.get(position).getName());
+        holder.company.setText(berryList.get(position).getCompany());
+        holder.location.setText(berryList.get(position).getLocation());
         holder.category.setText(berryList.get(position).getCategory());
+        holder.auxdata.setText(berryList.get(position).getAuxdata());
     }
 
     @Override
