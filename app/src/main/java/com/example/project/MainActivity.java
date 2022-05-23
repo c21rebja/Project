@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +34,15 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         new JsonTask(this).execute(JSON_URL);
+
+        Button aboutButton = findViewById(R.id.about_button);
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
