@@ -2,4 +2,5 @@
     <string name="app_name">Project</string>
     <string name="heading">Svenska bär</string>
     <string name="about_button">Om Appen</string>
+    <string name="about_text">Blah blah blah</string>
 </resources>
