@@ -25,9 +25,9 @@ public class DetailActivity extends AppCompatActivity {
 
         nameView.setText(extras.get("name").toString());
         String typeText = extras.get("name").toString()
-                + "är av typen " + extras.get("type").toString()
-                + "och fungerar bäst som " + extras.get("cake").toString()
-                + ". De växer på " + extras.get("grow").toString();
+                + " är av typen " + extras.get("type").toString()
+                + " och fungerar bäst som " + extras.get("cake").toString()
+                + ". De växer på " + extras.get("grow").toString() + ".";
         typeView.setText(typeText);
 
         img.setImageResource(getImageId(this, extras.getString("img")));
