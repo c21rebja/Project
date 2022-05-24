@@ -28,33 +28,11 @@
         tools:text="Type"
         android:textSize="18sp"/>
 
-    <TextView
-        android:id="@+id/display_cake"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/display_type"
-        android:layout_marginTop="5dp"
-        tools:text="Cake"
-        android:textSize="18sp"/>
-
-    <TextView
-        android:id="@+id/display_grow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/display_cake"
-        android:layout_marginTop="5dp"
-        tools:text="Grow"
-        android:textSize="18sp"/>
-
     <ImageView
         android:id="@+id/display_img"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/display_grow" />
+        app:layout_constraintTop_toBottomOf="@id/display_type" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
