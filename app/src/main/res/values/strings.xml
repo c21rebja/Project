@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Project</string>
-    <string name="heading">Svenska bär</string>
+    <string name="app_name">Svenska Bär</string>
+    <string name="heading">Vanliga bär</string>
     <string name="about_button">Om Appen</string>
-    <string name="about_text">Blah blah blah</string>
+    <string name="about_text">Målgruppen för denna app är personer som gillar att vara ute i naturen och plocka bär.
+        Den är till för att vara ett hjälpmedel och ge information om de vanligaste bären i Sverige, så att användaren
+        lätt ska kunna identifiera bären de hittar, samt få inspiration för vad de kan användas till.
+        Den är till för att fungera för både erfarna bärplockare som bara vill ha lite extra information i fickan,
+        och för totala nybörjare som inte känner igen bären de hittar alls.</string>
 </resources>
